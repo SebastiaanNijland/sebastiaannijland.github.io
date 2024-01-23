@@ -1,0 +1,58 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2020": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2020
+    },
+    "plugins": [
+      "simple-import-sort"
+    ],
+    "rules": {
+        "arrow-parens": ["error", "as-needed"],
+        "comma-dangle": ["error", "never"],
+        "func-names": ["error", "as-needed"],
+        "indent": ["error", 4, {
+          "SwitchCase": 1
+        }],
+        "lines-between-class-members": ["error", "always", {
+          "exceptAfterSingleLine": true
+        }],
+        "new-cap": "error",
+        "no-empty": ["error", {
+          "allowEmptyCatch": true
+        }],
+        "no-extra-semi": "error",
+        "no-floating-decimal": "off",
+        "no-mixed-operators": "off",
+        "no-multi-assign": "off",
+        "no-multiple-empty-lines": ["error", {
+          "max": 2
+        }],
+        "no-plusplus": "off",
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
+        "space-before-function-paren": ["error", {
+          "anonymous": "never",
+          "named": "never",
+          "asyncArrow": "always"
+        }],
+        "simple-import-sort/imports": [2, {
+          "groups": [
+              ["^react$"],
+              ["^@?\\w"], // Packages. Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+              ["Components/Styled"],
+              ["Components/Templates"],
+
+              ["^\\."], // Relative imports. Anything that starts with a dot.
+
+              ["\\.(css|scss)"],
+
+              ["^"] // Absolute imports and other imports such as Vue-style `@/foo`. Anything not matched in another group.
+          ]
+        }]
+    }
+}

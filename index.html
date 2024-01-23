@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#6494ff" />
+        <meta
+            name="description"
+            content="Boardgame Score Calculator"
+        />
+        <title>Boardgame Score Calculator</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet"/>
+        <style>
+            :root {
+                --accent-color: hsl(55, 100%, 40%);
+            }
+            html {
+                background: linear-gradient(hsl(221, 100%, 20%), hsl(221, 100%, 0%));
+            }
+            body {
+                font-size: 20px;
+                font-family: monospace;
+                accent-color: white;
+            }
+            button {
+                line-height: .5;
+                margin: 0;
+                padding: 0;
+                cursor: pointer;
+                height: 2rem;
+            }
+            button::-moz-focus-inner {
+                padding: 0;
+                border: 0;
+            }
+            h1 {
+                margin-bottom: 0;
+            }
+            @media screen and (max-width: 600px) {
+                .hidden-xs {
+                    display: none !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
+        <script src="build/index.js"></script>
+    </body>
+</html>

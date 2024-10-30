@@ -64,7 +64,6 @@ const AgricolaInputs = [{
 }];
 
 export const Agricola: Boardgame = {
-    id: '1',
     name: 'Agricola',
     inputs: AgricolaInputs,
     output: inputs => {

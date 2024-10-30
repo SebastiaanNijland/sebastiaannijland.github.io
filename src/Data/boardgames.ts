@@ -2,6 +2,7 @@ import { InputHTMLAttributes } from 'react';
 
 import { Agricola } from './Boardgames/Agricola';
 import { Akropolis } from './Boardgames/Akropolis';
+import { CalderaPark } from './Boardgames/CalderaPark';
 import { GalileoProject } from './Boardgames/GalileoProject';
 
 interface Input extends InputHTMLAttributes<HTMLInputElement> {
@@ -10,7 +11,6 @@ interface Input extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export interface Boardgame {
-    id: string;
     name: string;
     inputs: Input[];
     output: (inputs: Input[]) => number;
@@ -19,5 +19,6 @@ export interface Boardgame {
 export const boardgames = [
     Agricola,
     Akropolis,
+    CalderaPark,
     GalileoProject
 ];

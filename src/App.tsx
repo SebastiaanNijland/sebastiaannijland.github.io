@@ -37,7 +37,7 @@ const App: FunctionComponent = () => {
     const [boardgame, setBoardgame] = useState(boardgames[0]);
 
     const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const newBoardgame = boardgames.find(b => b.id === e.target.value);
+        const newBoardgame = boardgames.find(b => b.name === e.target.value);
         if (newBoardgame) {
             setBoardgame(newBoardgame);
         }
@@ -52,8 +52,8 @@ const App: FunctionComponent = () => {
                     </Col>
                     <Col>
                         <Select onChange={onChange}>
-                            {boardgames.map(({ id, name }) => (
-                                <option key={id} value={id}>{name}</option>
+                            {boardgames.map(({ name }) => (
+                                <option key={name} value={name}>{name}</option>
                             ))}
                         </Select>
                     </Col>

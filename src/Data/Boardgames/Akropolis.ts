@@ -51,7 +51,6 @@ const AkropolisInputs = [{
 }];
 
 export const Akropolis: Boardgame = {
-    id: '2',
     name: 'Akropolis',
     inputs: AkropolisInputs,
     output: inputs => {

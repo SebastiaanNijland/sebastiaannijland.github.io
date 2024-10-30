@@ -38,7 +38,6 @@ const GalileoProjectInputs = [{
 }];
 
 export const GalileoProject: Boardgame = {
-    id: '3',
     name: 'Galileo Project',
     inputs: GalileoProjectInputs,
     output: inputs => {

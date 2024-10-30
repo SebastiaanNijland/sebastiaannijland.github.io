@@ -38,16 +38,31 @@ const BoardGame: FunctionComponent<{ boardgame: Boardgame }> = ({ boardgame }) =
         calculate(newInputs);
     };
 
+    const onCheck = (name: string, checked: boolean) => {
+        const newInputs = inputs.map(input => {
+            if (input.name === name) {
+                return {
+                    ...input,
+                    checked
+                };
+            }
+            return input;
+        });
+        setInputs(newInputs);
+        calculate(newInputs);
+    };
+
     useEffect(() => {
         setInputs(boardgame.inputs);
         calculate(boardgame.inputs);
     }, [boardgame]);
 
-    const Inputs = inputs.map(({name, ...rest}) => (
+    const Inputs = inputs.map(({name, type, ...rest}) => (
         <BoardgameInput
             key={name}
             name={name}
-            onChangeHandler={onChange}
+            onChangeHandler={type === 'checkbox' ? onCheck : onChange}
+            type={type}
             {...rest} />
     ));
 

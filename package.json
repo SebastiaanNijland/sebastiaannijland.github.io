@@ -1,46 +1,50 @@
 {
-  "name": "sebastiaannijland",
-  "version": "1.0.0",
-  "private": false,
-  "license": "MIT",
-  "engines": {
-    "node": "20.x"
-  },
-  "sideEffects": false,
-  "scripts": {
-    "prestart": "yarn",
-    "start": "esbuild --bundle src//index.tsx --outdir=build --watch --platform=node --define:process.env.NODE_ENV='\"development\"'",
-    "build": "esbuild --bundle src//index.tsx --outdir=build --platform=node --minify --define:process.env.NODE_ENV='\"production\"'",
-    "eslint": "eslint \"**/*.{ts,tsx}\"",
-    "tsc": "tsc --diagnostics"
-  },
-  "browserslist": {
-    "production": [
-      ">1%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "dependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "styled-components": "6.1.1"
-  },
-  "devDependencies": {
-    "@types/node": "18.19.3",
-    "@types/react": "18.2.43",
-    "@types/react-dom": "18.2.17",
-    "@types/styled-components": "5.1.34",
-    "@typescript-eslint/parser": "6.14.0",
-    "esbuild": "0.19.5",
-    "eslint": "8.55.0",
-    "eslint-plugin-simple-import-sort": "10.0.0",
-    "typescript": "5.3.3"
-  },
-  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
-}
+    "name": "sebastiaannijland",
+    "version": "1.0.0",
+    "private": false,
+    "license": "MIT",
+    "engines": {
+      "node": "22.x"
+    },
+    "sideEffects": false,
+    "scripts": {
+      "prestart": "yarn",
+      "start": "esbuild --bundle src//index.tsx --outdir=build --watch --platform=node --define:process.env.NODE_ENV='\"development\"'",
+      "build": "esbuild --bundle src//index.tsx --outdir=build --platform=node --minify --define:process.env.NODE_ENV='\"production\"'",
+      "eslint": "eslint \"**/*.{ts,tsx}\"",
+      "tsc": "tsc --diagnostics"
+    },
+    "browserslist": {
+      "production": [
+        ">1%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    },
+    "dependencies": {
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "styled-components": "6.1.1",
+      "three": "0.175.0",
+      "three-stdlib": "2.35.15"
+    },
+    "devDependencies": {
+      "@types/node": "22.14.0",
+      "@types/react": "18.2.43",
+      "@types/react-dom": "18.2.17",
+      "@types/styled-components": "5.1.34",
+      "@types/three": "0.175.0",
+      "@typescript-eslint/parser": "6.14.0",
+      "esbuild": "0.19.5",
+      "eslint": "8.55.0",
+      "eslint-plugin-simple-import-sort": "10.0.0",
+      "typescript": "5.3.3"
+    },
+    "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
+  }
+  

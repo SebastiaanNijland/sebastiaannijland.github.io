@@ -2,20 +2,9 @@ import { type FunctionComponent,useState} from 'react';
 
 import styled from 'styled-components';
 
-import Col from './Components/Styled/Col';
-import Row from './Components/Styled/Row';
-import Select from './Components/Styled/Select';
+import InitativeTracker from './Components/Templates/InitativeTracker';
 
-import BoardGame from './Components/Templates/BoardGame';
-
-import { boardgames } from './Data/boardgames';
-
-const Article = styled.article`
-flex: 1 0 100%;
-margin-left: auto;
-padding-left: 1rem;
-padding-right: 1rem;
-`;
+import Boardgames from './Boardgames';
 
 const Main = styled.main`
 box-sizing: border-box;
@@ -33,35 +22,36 @@ padding-right: 1rem;
 color: ${({ theme }) => theme.primary.complementaryColor};
 `;
 
-const App: FunctionComponent = () => {
-    const [boardgame, setBoardgame] = useState(boardgames[0]);
+const Nav = styled.nav`
+flex: 1 0 100%;
+display: flex;
+flex-flow: row wrap;
+justify-content: center;
+`;
 
-    const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const newBoardgame = boardgames.find(b => b.name === e.target.value);
-        if (newBoardgame) {
-            setBoardgame(newBoardgame);
-        }
-    };
+const NavButton = styled.button`
+background-color: transparent;
+border: 2px solid ${({ theme }) => theme.primary.complementaryColor};
+border-radius: 5px;
+color: ${({ theme }) => theme.primary.complementaryColor};
+font-size: 20px;
+font-weight: 600;
+padding: 0.5rem 1rem;
+margin: 0.5rem;
+`;
+
+const App: FunctionComponent = () => {
+    const [view, setView] = useState('home');
 
     return (
         <Main>
-            <Article>
-                <Row>
-                    <Col>
-                        <p>Calculate your score for boardgames! Pick one from the dropdown and fill out all the fields.</p>
-                    </Col>
-                    <Col>
-                        <Select onChange={onChange}>
-                            {boardgames.map(({ name }) => (
-                                <option key={name} value={name}>{name}</option>
-                            ))}
-                        </Select>
-                    </Col>
-                    <Col>
-                        <BoardGame boardgame={boardgame} />
-                    </Col>
-                </Row>
-            </Article>
+            <Nav>
+                <NavButton onClick={() => setView('home')}>Home</NavButton>
+                <NavButton onClick={() => setView('boardgames')}>Boardgames</NavButton>
+                <NavButton onClick={() => setView('initative')}>Initative</NavButton>
+            </Nav>
+            {view === 'boardgames' && <Boardgames /> }
+            {view === 'initative' && <InitativeTracker />}
         </Main>
     );
 };
